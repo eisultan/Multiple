@@ -182,4 +182,10 @@ happening to the most left nucleotide of the motif, this value combined with the
 width allows us to imagine how the motif moved over the sequence accross the iterations
 which is good if we want to align the PWMs and also to access the convergence of the motif.
 
-prob_x: 
+prob_x: This value is bisaclly the multiplication of the probabilities of the nucleotides
+in the data. If we initlize all the PWM for all the motifs and the parameters for the background to 0.25 
+which means equal probabilites to see the different nucleotides (A,C,G,T) indside the motifs as well as
+in the background. The prob_x value will equal to (log(0.25)* number of sequences* number of nucleotides in the sequence)
+This value should improve across the iterations since the estimation of the PWMs is improving and by turn the information
+content is improving. This value will give us an indication on how fast this improvment is happening accross the iterations.
+
