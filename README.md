@@ -157,12 +157,12 @@ The standard output provide you the following useful information
 
 The parameters file 
 -------------------------------
-The parameter file is edited every ten sweeps by adding th new values for
+The parameter file is edited every ten sweeps by adding the new values for
 these parameters respectively:
 
-Sweep: the number of the sweep in which the file is being edited.
+sweep: the number of the sweep in which the file is being edited.
 
-motif: the index of the motif whose its value are written in the row.
+motif: the index of the motif whose values are written in the row.
 
 nb_regions: how many subregions correspond to the given motif.
 
@@ -198,3 +198,52 @@ should be treat as they are without binarizing them to only 2 values (having a m
 
 beta: After the K T_probit column, the file contains K beta columns where the cells of these columns contain the value that
 the covariate is influencing the regression model final value (the value that tells if the gene has the motif or not).
+
+
+The PWM file 
+-------------------------------
+The PWM file is edited every ten sweeps by adding the new values for the position weight Matrices 
+describing the motifs and some other parameters related to the motif shape,
+these parameters are respectively:
+
+sweep: the number of the sweep in which the file is being edited.
+
+motif: the index of the motif whose values are written in the row.
+
+width: the width of the motif in concern.
+
+refpos: the reference position (explained above).
+
+centerpal: tells which nucleotide within the motif represents the center of the palindrome (if there is any).
+
+npairedcolpal: the number of paired columns for the current motif in the current iteration (even number).
+
+prob: after that, there are (maxw * 4) columns describing the probability of seeing (A,C,G,T) respectively. For example, the first four columns are the probability to see (A,C,G,T) in the first position and so on.
+
+
+The position pdf file 
+-------------------------------
+The position pdf file is edited every 100 sweeps and it contains a column for every nucleotide in the sequence, this column represents the probability of seeing the motif (the reference position) at this nucleotide. There are four other columns in the file, these columns represent respectively:
+
+sweep: the number of the sweep in which the file is being edited.
+
+motif: the index of the motif whose values are written in the row.
+
+phi: explained above.
+
+nb_regions: represent the amount of sub regions that the sequence has been divided into, each sub region has a different probability of seeing the motif.
+
+pos_prob: after that, there are L columns corresponding to L nucleotides forming the sequence. The values in the cells of these columns are the probability of seeing the motif (the reference position) at this nucleotide.
+
+
+
+The motif sequence file 
+-------------------------------
+The motif sequence file is edited every 100 sweeps and it contains the positions of the motif occurrences in all the sequences. There are another two columns describing the sweep and the motif as before. The columns in the file are ordered in the following manner:
+
+sweep: the number of the sweep in which the file is being edited.
+
+motif: the index of the motif whose values are written in the row.
+
+position: After that, there are N columns called position for the N sequences in the input data. The values in these columns are the the position of the motif in concern in the corresponding sequence. When the motif is absent, the value (-1) is given.
+
