@@ -27,8 +27,11 @@ Usage : multiple [-seq <file>] [-xvectors <file>] [-xtrees <file>]
         
         Command line that can be used to test the tool :
         
-        ../Sources/multiple -seq TSS_subset121bp_withexpression_20171205.txt -xvectors total_vectors_180126.tsv -nmotifs 75 -         xtrees four_trees_20180202.tsv -widthbg 8 1 -z 0.25 0.25 1 -rngseed 1 -Nsweep 50000 -prefix M75pal50k_seed1_ 
-        -palprior 0.5 0.5 1 0.5
+        ../Sources/multiple -seq TSS_subset121bp_withexpression_20171205.txt 
+        -xvectors total_vectors_180126.tsv -nmotifs 75 
+        -xtrees four_trees_20180202.tsv -widthbg 8 1 
+        -z 0.25 0.25 1 -rngseed 1 -Nsweep 50000 
+        -prefix M75pal50k_seed1_ -palprior 0.5 0.5 1 0.5
 
 
 
